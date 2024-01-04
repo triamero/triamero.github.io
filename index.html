@@ -37,6 +37,20 @@
             <h1 id="hello-there">Привет!</h1>
             <p>Когда-нибудь здесь появятся мои статьи.</p>
         </div>
+        <div class="posts">
+            <div class="post">
+                <div class="post on-list">
+                    <h1 class="post-title">Команды ffmpeg</h1>
+                    <div class="post-content">
+                        <p>
+                            <label>Конвертация файла в h265</label>
+                            <br>
+                            ffmpeg -i input.mp4 -c:v libx265 -vtag hvc1 -c:a copy result.mp4
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <script type="application/javascript" src="/script.js"></script>
