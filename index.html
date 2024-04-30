@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>triamero's home</title>
     <link href="/style.css" rel="stylesheet">
-	<link rel="icon" type="image/png" href="/favicon.png"/>
+    <link rel="icon" type="image/png" href="/favicon.png"/>
 </head>
 <body>
 <div class="container center">
@@ -46,6 +46,11 @@
                             <label>Конвертация файла в h265</label>
                             <br>
                             ffmpeg -i input.mp4 -c:v libx265 -vtag hvc1 -c:a copy result.mp4
+                        </p>
+                        <p>
+                            <label>Разбиение файла на отдельные кадры</label>
+                            <br>
+                            ffmpeg -i input.mp4 -qscale:v 1 ./output/%6d.jpg
                         </p>
                     </div>
                 </div>
