@@ -55,6 +55,124 @@
                     </div>
                 </div>
             </div>
+            <div class="post">
+                <div class="post on-list">
+                    <h1 class="post-title">Получение текущего IP адреса из терминала</h1>
+                    <div class="post-content">
+                        <p>
+                            curl https://ipinfo.io/ip
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="post">
+                <div class="post on-list">
+                    <h1 class="post-title">Гигиена при настройке нового сервера</h1>
+                    <div class="post-content">
+                        <p>
+                            <label> 1. Добавить не-root пользователя</label>
+                            <br>
+                            adduser <username> sudo
+                        </p>
+                        <p>
+                            <label> 2. Переключиться на нового пользователя</label>
+                            <br>
+                            su <username>
+                        </p>
+                        <p>
+                            <label> 3. Перейти в домашний каталог пользователя</label>
+                            <br>
+                            cd ~
+                        </p>
+                        <p>
+                            <label> 4. Создать директорию для хранения ssh ключей</label>
+                            <br>
+                             mkdir .ssh
+                        </p>
+                        <p>
+                            <label> 5. Открыть для редактирования новый файл</label>
+                            <br>
+                            nano ~/.ssh/authorized_keys
+                        </p>
+                        <p>
+                            <label> 6. Вставить публичный ключ, с которым будет выполняться подключения</label>
+                            <br>
+                            ssh-rsa AAAAB3NzaC1yc2EAAA....
+                        </p>
+                        <p>
+                            <label> 7. Сохранить и выйти</label>
+                            <br>
+                             ctrl-x, y, enter
+                        </p>
+                        <p>
+                            <label> 8. Отключиться от сервера и подключиться снова с использованием имени нового пользователя и ssh ключа</label>
+                        </p>
+                        <p>
+                            <label> 9. Открыть для редактирования файл</label>
+                            <br>
+                            sudo nano /etc/ssh/sshd_config
+                        </p>
+                        <p>
+                            <label> 10. Раскомментировать и выставить значение</label>
+                            <br>
+                            PermitRootLogin=no
+                        </p>
+                        <p>
+                            <label> 11. Раскомментировать и выставить значение</label>
+                            <br>
+                            PasswordAuthentication=no
+                        </p>
+                        <p>
+                            <label> 12. Сохранить и выйти</label>
+                            <br>
+                            ctrl-x, y, enter
+                        </p>
+                        <p>
+                            <label> 13. Перезапустить сервис ssh</label>
+                            <br>
+                            sudo systemctl ssh restart
+                        </p>
+                        <p>
+                            <label> 14. ОБЯЗАТЕЛЬНО ПРОВЕРИТЬ что подключение к серверу под root пользователем отключено</label>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="post">
+                <div class="post on-list">
+                    <h1 class="post-title">Установка ollama в другую директорию</h1>
+                    <div class="post-content">
+                        <p>
+                            <label> Установка </label>
+                            ollamasetup.exe /DIR="path/to/dir"
+                        </p>
+                        <p>
+                            <label> Смена директории хранения моделей </label>
+                            setx OLLAMA_MODELS="path/to/dir"
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="post">
+                <div class="post on-list">
+                    <h1 class="post-title"> Проверка времени доступа до хоста с помощью curl </h1>
+                    <div class="post-content">
+                        <p>
+                            curl -o /dev/null -s -w 'Total: %{time_total}s\n'  https://example.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="post">
+                <div class="post on-list">
+                    <h1 class="post-title"> Проверка доступности хоста/порта через cat </h1>
+                    <div class="post-content">
+                        <p>
+                            cat < /dev/null > /dev/tcp/192.168.1.1/80; echo $?
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
