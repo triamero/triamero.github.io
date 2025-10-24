@@ -1,0 +1,1 @@
+call docker rm triamero-github-io --force
