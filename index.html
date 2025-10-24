@@ -53,11 +53,15 @@
                             1. Открыть файл C:/Users/%username%/AppData/Roaming/NuGet/NuGet.config
                             <br>
                             2. Добавить/изменить секцию
-                            <![CDATA[
-                                <config>
-                                    <add key="globalPackagesFolder" value="path/to/dir" />
-                                </config>
-                            ]]>
+<pre>
+<code>&lt;configuration&gt;
+...
+    &lt;config&gt;
+        &lt;add key=&quot;globalPackagesFolder&quot; value=&quot;path/to/dir&quot;/&gt;
+    &lt;/config&gt;
+...
+&lt;/configuration&gt;</code>
+</pre>
                         </p>
                     </div>
                 </div>
