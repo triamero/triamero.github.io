@@ -40,6 +40,23 @@
         <div class="posts">
             <div class="post">
                 <div class="post on-list">
+                    <h1 class="post-title">Рекурсивное удаление папок bin/node_modules </h1>
+                    <div class="post-content">
+                        <p>
+                            <label>bin</label>
+                            <br>
+                            <pre><code>Get-ChildItem "bin" -Path .\ -Recurse | ForEach-Object { [System.IO.Directory]::Delete($_.FullName, $true) }</code></pre>
+                        </p>
+                        <p>
+                            <label>node_modules</label>
+                            <br>
+                            <pre><code>Get-ChildItem "node_modules" -Path .\ -Recurse | ForEach-Object { [System.IO.Directory]::Delete($_.FullName, $true) }</code></pre>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="post">
+                <div class="post on-list">
                     <h1 class="post-title">Перенос кэша Nuget в другую папку</h1>
                     <div class="post-content">
                         <p>
@@ -48,7 +65,7 @@
                             nuget config -set globalPackagesFolder="path/to/dir"
                         </p>
                         <p>
-                            <label>Вручную через изменение Nuget.config:</label>
+                            <label>Через изменение Nuget.config:</label>
                             <br>
                             1. Открыть файл C:/Users/%username%/AppData/Roaming/NuGet/NuGet.config
                             <br>
